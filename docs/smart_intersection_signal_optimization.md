@@ -16,21 +16,21 @@
 - 使用遗传算法优化周期长度和绿信比分配。
 - 统计平均延误、最大排队、通行率、停车次数和综合评分。
 - 自动生成对比图片、收敛曲线、队列曲线和 GIF 动图。
-- 提供完整源码、测试文件、运行结果和汇报页面。
+- 提供完整源码、测试文件、运行结果和 MkDocs 汇报页面。
 
 ## 文件结构
 
 ```text
 src/smart_intersection_signal_optimization/
-├── main.py                  # 命令行入口
-├── scenario.py              # 交叉口场景、相位和 Webster 基线
-├── simulator.py             # 队列演化仿真与指标计算
-├── optimizer.py             # 遗传算法配时优化
-├── visualization.py         # 图片、图表和 GIF 生成
-├── requirements.txt         # 依赖说明
-├── README.md                # 项目说明
-├── assets/                  # 运行结果图片、动图和数据
-└── tests/                   # 单元测试
+|-- main.py                  # 命令行入口
+|-- scenario.py              # 交叉口场景、相位和 Webster 基线
+|-- simulator.py             # 队列演化仿真与指标计算
+|-- optimizer.py             # 遗传算法配时优化
+|-- visualization.py         # 图片、图表和 GIF 生成
+|-- requirements.txt         # 依赖说明
+|-- README.md                # 项目说明
+|-- assets/                  # 运行结果图片、动图和数据
+`-- tests/                   # 单元测试
 ```
 
 ## 运行方法
@@ -67,25 +67,25 @@ convergence.csv                       # 每代优化过程
 
 下图展示了优化配时下交叉口各方向车辆排队随信号相位变化的过程。
 
-![交叉口信号优化动图](smart_intersection_signal_optimization_assets/intersection_signal_optimization.gif)
+![intersection signal optimization animation](smart_intersection_signal_optimization_assets/intersection_signal_optimization.gif)
 
 ## 实验结果
 
 ### 绿信比分配对比
 
-![绿信比对比](smart_intersection_signal_optimization_assets/green_split_comparison.png)
+![green split comparison](smart_intersection_signal_optimization_assets/green_split_comparison.png)
 
 ### 指标对比
 
-![指标对比](smart_intersection_signal_optimization_assets/metric_comparison.png)
+![metric comparison](smart_intersection_signal_optimization_assets/metric_comparison.png)
 
 ### 优化后排队曲线
 
-![排队曲线](smart_intersection_signal_optimization_assets/optimized_queue_profiles.png)
+![optimized queue profiles](smart_intersection_signal_optimization_assets/optimized_queue_profiles.png)
 
 ### 遗传算法收敛曲线
 
-![遗传算法收敛曲线](smart_intersection_signal_optimization_assets/ga_convergence.png)
+![genetic algorithm convergence](smart_intersection_signal_optimization_assets/ga_convergence.png)
 
 ## 运行结果示例
 
