@@ -266,3 +266,27 @@ footer {
     width: 100%;
   }
 }
+.code-block {
+  overflow-x: auto;
+  padding: 18px;
+  color: #223;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.code-block code {
+  font-family: Consolas, "Courier New", monospace;
+}
+
+.plain-list {
+  margin: 0;
+  padding-left: 22px;
+  color: var(--ink);
+}
+
+.plain-list li {
+  margin-bottom: 10px;
+}
