@@ -45,7 +45,9 @@ copyright: OpenHUTB 版权所有 &copy; {year}
 
 
 nav:
+
 - 首页: 'index.md'
+- 城市交叉口信号配时智能优化: 'smart_intersection_signal_optimization.md'
 - CarRacing DQN/DoubleDQN：训练改进与可视化对比: 'car_racing_dqn_improvements.md'
 - 自动驾驶感知系统: 'carla_yolo_detection/README.md'
 
