@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>城市交叉口信号配时智能优化</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-content">
+      <p class="eyebrow">Smart Intersection Signal Optimization</p>
+      <h1>城市交叉口信号配时智能优化</h1>
+      <p class="subtitle">基于队列仿真与遗传算法的高峰期信号周期、绿信比分配优化项目</p>
+      <div class="hero-stats">
+        <span><strong>4</strong> 个信号相位</span>
+        <span><strong>36</strong> 代遗传搜索</span>
+        <span><strong>5</strong> 类交通指标</span>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <canvas id="signalCanvas" width="680" height="420" aria-label="交叉口信号灯动画"></canvas>
+    </div>
+  </header>
+
+  <main>
+    <section class="section intro">
+      <div>
+        <h2>项目目标</h2>
+        <p>面向城市路口早晚高峰拥堵问题，本项目建立四进口交叉口交通流仿真模型，以 Webster 固定配时为基线，通过精英保留遗传算法优化信号周期与各相位绿灯时间，降低平均延误、最大排队长度与停车次数。</p>
+      </div>
+      <div class="metric-grid">
+        <div class="metric"><span>优化对象</span><strong>Cycle + Green Split</strong></div>
+        <div class="metric"><span>基线方案</span><strong>Webster</strong></div>
+        <div class="metric"><span>优化算法</span><strong>Genetic Algorithm</strong></div>
+        <div class="metric"><span>输出形式</span><strong>PNG + GIF + JSON</strong></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>系统流程</h2>
+      <div class="flow">
+        <div>交通需求建模</div>
+        <div>Webster 基线配时</div>
+        <div>队列演化仿真</div>
+        <div>遗传算法搜索</div>
+        <div>指标对比与可视化</div>
+      </div>
+    </section>
+
+    <section class="section media-band">
+      <div>
+        <h2>动态演示</h2>
+        <p>GIF 展示了优化配时下各进口排队车辆随信号相位变化的过程。绿色表示当前放行方向，车辆条带长度代表该进口的实时排队压力。</p>
+      </div>
+      <img src="assets/intersection_signal_optimization.gif" alt="交叉口信号优化动图">
+    </section>
+
+    <section class="section gallery">
+      <h2>实验结果</h2>
+      <div class="figure-grid">
+        <figure>
+          <img src="assets/green_split_comparison.png" alt="绿信比对比">
+          <figcaption>基线与优化后的绿信比分配对比</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/metric_comparison.png" alt="指标对比">
+          <figcaption>延误、排队、停车与综合评分对比</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/optimized_queue_profiles.png" alt="排队曲线">
+          <figcaption>优化方案下各进口排队长度曲线</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/ga_convergence.png" alt="遗传算法收敛曲线">
+          <figcaption>遗传算法搜索过程收敛曲线</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section details">
+      <h2>工程实现</h2>
+      <div class="detail-grid">
+        <article>
+          <h3>建模层</h3>
+          <p>定义进口道、相位、需求、饱和流率、优先级和信号周期，支持将任意绿信比归一化到周期约束内。</p>
+        </article>
+        <article>
+          <h3>仿真层</h3>
+          <p>按秒推进车辆到达、排队和放行，统计平均延误、最大排队、通行率、公平性与停车次数。</p>
+        </article>
+        <article>
+          <h3>优化层</h3>
+          <p>将周期和绿信比分配编码为基因，通过选择、交叉、变异和精英保留迭代搜索更优配时。</p>
+        </article>
+        <article>
+          <h3>展示层</h3>
+          <p>自动生成结果图表、GIF 动图、CSV、JSON 和网页汇报材料，便于提交和展示。</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>OpenHUTB nn course project · smart_intersection_signal_optimization</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
